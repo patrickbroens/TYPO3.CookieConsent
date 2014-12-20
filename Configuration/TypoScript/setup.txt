@@ -1,0 +1,41 @@
+plugin.tx_cookieconsent = USER
+plugin.tx_cookieconsent {
+	userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+	vendorName = PatrickBroens
+	extensionName = CookieConsent
+	pluginName = CookieConsent
+
+	settings {
+		pages {
+			// Page ID where privacy statement / more information can be found
+			privacyStatement = {$plugin.tx_cookieconsent.pages.privacyStatement}
+		}
+		loadScripts {
+			// Mode: blacklist (exclude) / whitelist (include)
+			mode = {$plugin.tx_cookieconsent.loadScripts.mode}
+
+			// List of domains for blacklist (exclude) / whitelist (include)
+			domains {
+				googleTagManager = googletagmanager.com
+				googleAnalytics = google-analytics.com
+				doubleClick = doubleclick.net
+			}
+		}
+	}
+}
+
+// Include Javascript and CSS
+page {
+	includeJSFooter {
+		aop = EXT:cookie_consent/Resources/Public/Javascript/AOP.js
+		cookieConsent = EXT:cookie_consent/Resources/Public/Javascript/CookieConsent.js
+	}
+	includeCSS {
+		cookieConsent = EXT:cookie_consent/Resources/Public/CSS/CookieConsent.css
+	}
+}
+
+// Remove the header
+tt_content.cookieconsent_cookieconsent {
+	10 >
+}

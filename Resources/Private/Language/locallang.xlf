@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-12-11T15:33:20Z" product-name="cookie_consent">
+		<header/>
+		<body>
+			<trans-unit id="description" xml:space="preserve">
+				<source>Our website uses cookies. Want to know more?</source>
+			</trans-unit>
+			<trans-unit id="moreInformation" xml:space="preserve">
+				<source>Click here for more information</source>
+			</trans-unit>
+			<trans-unit id="close" xml:space="preserve">
+				<source>Close</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

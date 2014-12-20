@@ -1,0 +1,34 @@
+#cookie-consent {
+	background-color: rgb(37, 53, 58);
+	bottom: 0px;
+	display: none;
+	font-size: 11px;
+	line-height: 30px;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	z-index: 100;
+}
+
+#cookie-consent,
+#cookie-consent a {
+	color: #fff;
+}
+
+#cookie-consent a.information {
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+#cookie-consent a.submit,
+#cookie-consent a.information:hover {
+	text-decoration: none;
+}
+
+#cookie-consent a.submit {
+	border: 1px #fff solid;
+	color: #fff;
+	margin: 0 0 0 4px;
+	padding: 3px 6px;
+}
+

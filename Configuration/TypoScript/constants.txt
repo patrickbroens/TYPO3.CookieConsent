@@ -1,0 +1,11 @@
+// Settings
+plugin.tx_cookieconsent {
+	pages {
+		# cat=cookie consent; type=int+; label= Privacy Statement PID: Page where the privacy statement or more information about tracking cookies can be found. Link from the bar.
+		privacyStatement = 1
+	}
+	loadScripts {
+		# cat=cookie consent; type=options[Blacklist=blacklist,Whitelist=whitelist]; label= List mode: Domains will be filtered by excluding them (blacklist), or including them (whitelist)
+		mode = blacklist
+	}
+}
