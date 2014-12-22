@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Cookie consent',
-	'description' => 'Show information and get consent for tracking cookies. Handles "doNotTrack" setting from browser automatically. Javascript based. Needs jQuery.',
+	'description' => 'Show information and get consent for tracking cookies. Handles "doNotTrack" setting from browser automatically. Filters out unwanted tracking scripts by AOP. Javascript based. Needs jQuery.',
 	'category' => 'fe',
 	'state' => 'stable',
 	'uploadfolder' => FALSE,
