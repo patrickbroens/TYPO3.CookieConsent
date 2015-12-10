@@ -89,3 +89,46 @@ mode
 
    Declaring the domains which should be used in the white- or blacklist is not possible in constants.
    These must be declared in the setup of your TypoScript Template.
+
+
+
+.. _constants-plugin-cookie-consent-checkbrowserdnt:
+
+plugin.tx\_cookieconsent.checkBrowserDNT
+""""""""""""""""""""""""""""""""""""""""
+
+.. container:: table-row
+
+   Property
+         checkBrowserDNT
+
+   Data type
+         boolean
+
+   Description
+         1 (true) when the "Do Not Track" setting of the browser has to be taken into account.
+
+   Default
+         0
+
+
+
+.. _constants-plugin-cookie-consent-showdenybutton:
+
+plugin.tx\_cookieconsent.showDenyButton
+"""""""""""""""""""""""""""""""""""""""
+
+.. container:: table-row
+
+   Property
+         showDenyButton
+
+   Data type
+         boolean
+
+   Description
+         1 (true) shows also the button to deny the consent. By clicking this button, the visitor will not be tracked
+         and the cookie bar will not be shown anymore.
+
+   Default
+         0

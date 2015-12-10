@@ -4,16 +4,20 @@
 		<header/>
 		<body>
 			<trans-unit id="description" xml:space="preserve" approved="yes">
-				<source>Our website uses cookies. Want to know more?</source>
-				<target>Onze website maakt gebruik van cookies. Meer weten?</target>
+				<source>Our website uses tracking cookies. By clicking "accept" you give your permission to this website to use tracking cookies.</source>
+				<target>Onze website maakt gebruik van tracking cookies. Door op "akkoord" te klikken geeft u toestemming voor het gebruik van tracking cookies.</target>
 			</trans-unit>
 			<trans-unit id="moreInformation" xml:space="preserve" approved="yes">
-				<source>Click here for more information</source>
-				<target>Klik hier voor meer informatie</target>
+				<source>Click here for our privacy and cookie policy</source>
+				<target>Klik hier voor ons privacy- en cookiebeleid</target>
 			</trans-unit>
-			<trans-unit id="close" xml:space="preserve" approved="yes">
-				<source>Close</source>
-				<target>Sluiten</target>
+			<trans-unit id="accept" xml:space="preserve" approved="yes">
+				<source>Accept</source>
+				<target>Akkoord</target>
+			</trans-unit>
+			<trans-unit id="deny" xml:space="preserve" approved="yes">
+				<source>Deny</source>
+				<target>Weigeren</target>
 			</trans-unit>
 		</body>
 	</file>

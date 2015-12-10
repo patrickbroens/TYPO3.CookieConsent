@@ -1,10 +1,10 @@
-plugin.tx_cookieconsent = USER
-plugin.tx_cookieconsent {
-	userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-	vendorName = PatrickBroens
-	extensionName = CookieConsent
-	pluginName = CookieConsent
-
+tt_content.cookieConsent >
+tt_content.cookieConsent = FLUIDTEMPLATE
+tt_content.cookieConsent {
+	templateName = Bar
+	templateRootPaths {
+		0 = EXT:cookie_consent/Resources/Private/Templates/
+	}
 	settings {
 		pages {
 			// Page ID where privacy statement / more information can be found
@@ -16,26 +16,19 @@ plugin.tx_cookieconsent {
 
 			// List of domains for blacklist (exclude) / whitelist (include)
 			domains {
-				googleTagManager = googletagmanager.com
-				googleAnalytics = google-analytics.com
-				doubleClick = doubleclick.net
+				#googleTagManager = googletagmanager.com
+				#googleAnalytics = google-analytics.com
+				#doubleClick = doubleclick.net
+				#twitter = twitter.com
+				#facebook = facebook.com
+				#linkedin = linkedin.com
+			}
+
+			files {
+				#sharrre = sharrre
 			}
 		}
+		checkBrowserDNT = {$plugin.tx_cookieconsent.checkBrowserDNT}
+		showDenyButton = {$plugin.tx_cookieconsent.showDenyButton}
 	}
-}
-
-// Include Javascript and CSS
-page {
-	includeJSFooter {
-		aop = EXT:cookie_consent/Resources/Public/Javascript/AOP.js
-		cookieConsent = EXT:cookie_consent/Resources/Public/Javascript/CookieConsent.js
-	}
-	includeCSS {
-		cookieConsent = EXT:cookie_consent/Resources/Public/CSS/CookieConsent.css
-	}
-}
-
-// Remove the header
-tt_content.cookieconsent_cookieconsent {
-	10 >
 }

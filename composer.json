@@ -1,0 +1,35 @@
+{
+	"name": "patrickbroens/cookie-consent",
+	"type": "typo3-cms-extension",
+	"description": "Show information and get consent for tracking cookies. Handles \"doNotTrack\" setting from browser automatically. Filters out unwanted tracking scripts by AOP. Javascript based. Needs jQuery.",
+	"keywords": [
+		"TYPO3",
+		"cookie",
+		"consent"
+	],
+	"authors": [
+		{
+			"name": "Patrick Broens",
+			"email": "patrick.broens@typo3.org",
+			"homepage": "https://github.com/patrickbroens"
+		}
+	],
+	"version": "2.0.0",
+	"require": {
+		"typo3/cms-core": "*"
+	},
+	"replace": {
+		"cookie-consent": "self.version",
+		"typo3-ter/cookie-consent": "self.version"
+	},
+	"autoload": {
+		"psr-4": {
+			"PatrickBroens\\CookieConsent\\": "Classes/"
+		}
+	},
+	"homepage": "https://github.com/patrickbroens/TYPO3.CookieConsent",
+	"license": "GPL-2.0+",
+	"support": {
+		"issues": "https://github.com/patrickbroens/TYPO3.CookieConsent/issues"
+	}
+}

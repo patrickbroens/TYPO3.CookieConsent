@@ -1,0 +1,36 @@
+<html
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	xmlns:c="http://typo3.org/ns/PatrickBroens/CookieConsent/ViewHelpers"
+	data-namespace-typo3-fluid="true"
+>
+
+<c:pageRenderer.addCss file="{f:uri.resource(path: 'CSS/CookieConsent.css', extensionName: 'cookie_consent')}" />
+<c:pageRenderer.addJsFooterFile file="{f:uri.resource(path: 'Javascript/AOP.min.js', extensionName: 'cookie_consent')}" />
+<c:pageRenderer.addJsFooterFile file="{f:uri.resource(path: 'Javascript/CookieConsent.min.js', extensionName: 'cookie_consent')}" />
+
+<div id="cookie-consent">
+	<p>
+		<f:translate key="description">Our website uses tracking cookies. By clicking "accept" you give your permission to this website to use tracking cookies.</f:translate>
+	</p>
+	<p>
+		<f:link.page pageUid="{settings.pages.privacyStatement}" class="information">
+			<f:translate key="moreInformation">Click here for our privacy and cookie policy</f:translate>
+		</f:link.page>
+		<f:link.page section="top" class="accept">
+			<f:translate key="accept">Accept</f:translate>
+		</f:link.page>
+		<f:if condition="{settings.showDenyButton} == 1">
+			<f:link.page section="top" class="deny">
+				<f:translate key="deny">Deny</f:translate>
+			</f:link.page>
+		</f:if>
+	</p>
+</div>
+<c:configuration
+	mode="{settings.loadScripts.mode}"
+	domains="{settings.loadScripts.domains}"
+	files="{settings.loadScripts.files}"
+	checkBrowserDnt="{settings.checkBrowserDNT}"
+/>
+
+</html>

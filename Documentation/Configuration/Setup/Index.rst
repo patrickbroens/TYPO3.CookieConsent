@@ -109,3 +109,46 @@ Google DoubleClick.
          }
       }
    }
+
+
+
+.. _constants-plugin-cookie-consent-settings-checkbrowserdnt:
+
+plugin.tx\_cookieconsent.settings.checkBrowserDNT
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+.. container:: table-row
+
+   Property
+         checkBrowserDNT
+
+   Data type
+         boolean
+
+   Description
+         1 (true) when the "Do Not Track" setting of the browser has to be taken into account.
+
+   Default
+         {$plugin.tx_cookieconsent.checkBrowserDNT}
+
+
+
+.. _constants-plugin-cookie-consent-settings-showdenybutton:
+
+plugin.tx\_cookieconsent.settings.showDenyButton
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+.. container:: table-row
+
+   Property
+         showDenyButton
+
+   Data type
+         boolean
+
+   Description
+         1 (true) shows also the button to deny the consent. By clicking this button, the visitor will not be tracked
+         and the cookie bar will not be shown anymore.
+
+   Default
+         {$plugin.tx_cookieconsent.showDenyButton}

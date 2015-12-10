@@ -8,4 +8,8 @@ plugin.tx_cookieconsent {
 		# cat=cookie consent; type=options[Blacklist=blacklist,Whitelist=whitelist]; label= List mode: Domains will be filtered by excluding them (blacklist), or including them (whitelist)
 		mode = blacklist
 	}
+		# cat=cookie consent; type=boolean; label= Check browser DNT setting: When set no consent has been given by default and no cookie bar will be shown
+	checkBrowserDNT = 0
+		# cat=cookie consent; type=boolean; label= Show the DENY button: When NOT showing this button, the cookie bar stays up until cookies are accepted
+	showDenyButton = 0
 }

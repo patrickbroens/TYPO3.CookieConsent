@@ -3,14 +3,17 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-12-11T15:33:20Z" product-name="cookie_consent">
 		<header/>
 		<body>
-			<trans-unit id="description" xml:space="preserve">
-				<source>Our website uses cookies. Want to know more?</source>
+			<trans-unit id="description" xml:space="preserve" approved="yes">
+				<source>Our website uses tracking cookies. By clicking "accept" you give your permission to this website to use tracking cookies.</source>
 			</trans-unit>
-			<trans-unit id="moreInformation" xml:space="preserve">
-				<source>Click here for more information</source>
+			<trans-unit id="moreInformation" xml:space="preserve" approved="yes">
+				<source>Click here for our privacy and cookie policy</source>
 			</trans-unit>
-			<trans-unit id="close" xml:space="preserve">
-				<source>Close</source>
+			<trans-unit id="accept" xml:space="preserve" approved="yes">
+				<source>Accept</source>
+			</trans-unit>
+			<trans-unit id="deny" xml:space="preserve" approved="yes">
+				<source>Deny</source>
 			</trans-unit>
 		</body>
 	</file>

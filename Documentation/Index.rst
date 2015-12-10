@@ -16,7 +16,7 @@ cookie\_consent
       cookie\_consent
 
 :Version:
-      1.0.0
+      2.0.0
 
 :Language:
       en

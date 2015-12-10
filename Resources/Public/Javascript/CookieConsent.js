@@ -24,6 +24,8 @@
 (function(configuration) {
 	var _mode = configuration.mode;
 	var _domains = configuration.domains;
+	var _files = configuration.files;
+	var _checkBrowserDNT = configuration.checkBrowserDNT;
 
 	/**
 	 * Sanitize invocation by removing src urls if not allowed
@@ -61,12 +63,16 @@
 	 * @returns {boolean}
 	 */
 	var isUrlAllowed = function(url) {
-		var regularExpression = new RegExp('(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
-		var urlAllowed = false;
+		var regularExpressionDomain = new RegExp('(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
+		var domainAllowed = false;
+		var fileAllowed = false;
 		var entryFoundInBlacklist = false;
+		var fileFound = false;
 
 		try {
-			url = url.match(regularExpression)[1].toString();
+			var domain = url.match(regularExpressionDomain)[1].toString();
+			var fileName = url.substring(url.lastIndexOf("/")+ 1);
+			fileName = (fileName.match(/[^.]+(\.[^?#]+)?/) || [])[0];
 		} catch(e) {
 			return true;
 		}
@@ -74,9 +80,9 @@
 		if (_mode === 'blacklist') {
 			for (var index = 0; index < _domains.length; ++index) {
 				if (typeof _domains[index] === 'string') {
-					if (url.indexOf(_domains[index].toLowerCase()) !== -1) {
+					if (domain.indexOf(_domains[index].toLowerCase()) !== -1) {
 						entryFoundInBlacklist = true;
-						urlAllowed = false;
+						domainAllowed = false;
 						break;
 					} else {
 						entryFoundInBlacklist = false;
@@ -84,20 +90,38 @@
 				}
 			}
 			if (!entryFoundInBlacklist) {
-				urlAllowed = true;
+				domainAllowed = true;
 			}
 		} else {
 			for (var index = 0; index < _domains.length; ++index) {
 				if (typeof _domains[index] === 'string') {
-					if (url.indexOf(_domains[index].toLowerCase()) !== -1) {
-						urlAllowed = true;
+					if (domain.indexOf(_domains[index].toLowerCase()) !== -1) {
+						domainAllowed = true;
 						break;
 					}
 				}
 			}
 		}
-		return urlAllowed;
+
+		for (var index = 0; index < _files.length; ++index) {
+			if (typeof _files[index] === 'string') {
+				if (fileName.indexOf(_files[index].toLowerCase()) !== -1) {
+					fileFound = true;
+					fileAllowed = false;
+					break;
+				} else {
+					fileFound = false;
+				}
+			}
+		}
+		if (!fileFound) {
+			fileAllowed = true;
+		}
+
+		return domainAllowed && fileAllowed;
 	};
+
+
 
 	/**
 	 * Checks if tracking is not allowed by the 'doNotTrack' cookie
@@ -151,7 +175,7 @@
 		document.cookie = 'doNotTrack=' + value + '; expires=' + date.toUTCString() + '; path=/';
 	};
 
-	if (noTrackingAllowedByNavigator()) {
+	if (noTrackingAllowedByNavigator() && _checkBrowserDNT === true) {
 		setCookie(1);
 	}
 
@@ -214,8 +238,13 @@ jQuery(document).ready(function($) {
 		$('#cookie-consent').show();
 	}
 
-	$('#cookie-consent .submit').click(function() {
+	$('#cookie-consent .accept').click(function() {
 		doNotTrackCookie.set(0);
+		location.reload(true);
+	});
+
+	$('#cookie-consent .deny').click(function() {
+		doNotTrackCookie.set(1);
 		location.reload(true);
 	});
 });

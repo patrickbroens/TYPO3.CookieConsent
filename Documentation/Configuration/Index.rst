@@ -21,6 +21,7 @@ cookie_consent.
    :titlesonly:
    :glob:
 
+   Condition/Index
    Constants/Index
    Setup/Index
 

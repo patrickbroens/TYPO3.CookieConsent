@@ -74,3 +74,22 @@ configuration as a Javascript object to the :code:`<head>` of the page.
     If you are defining your :code:`page = PAGE` TypoScript from within an extension using ext_typoscript_setup.txt as
     well, be aware of the loading order of the extensions. The extension cookie_consent has to be loaded prior to your
     extension, defining :code:`page = PAGE`.
+
+Removing cookie_consent from your template when the user made its choice
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+When not using the frontend javascript to exclude dynamic loading of scripts, you can remove the cookie bar completely
+when the user has made its choice. This way your frontend markup will stay clean and not include the markup for the
+cookie bar, inclusing its javascript functionality.
+
+To do this, add a condition to the TypoScript as mentioned above, like this:
+
+::
+
+   [PatrickBroens\CookieConsent\TypoScript\Conditions\DoNotTrackCondition]
+      page.10 >
+   [global]
+
+.. WARNING::
+
+   Only do this when you are not using the frontend javascript functionality to exclude dynamically loaded scripts.
