@@ -19,7 +19,7 @@
 		"typo3/cms-core": "*"
 	},
 	"replace": {
-		"cookie-consent": "self.version",
+		"cookie_consent": "self.version",
 		"typo3-ter/cookie-consent": "self.version"
 	},
 	"autoload": {
